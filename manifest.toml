@@ -14,7 +14,7 @@ license = "agpl-3-or-later"
 website = "https://linkstack.org/"
 admindoc = "https://docs.linkstack.org/"
 code = "https://github.com/LinkStackOrg/LinkStack"
-# FIXME: No CPE yet... check https://nvd.nist.gov/products/cpe/search/results?namingFormat=2.3&keyword=LinkStack
+# XXX: No CPE yet... check https://nvd.nist.gov/products/cpe/search/results?namingFormat=2.3&keyword=LinkStack
 #cpe = "???"
 fund = "https://liberapay.com/LittleLink-Custom"
 
@@ -24,8 +24,7 @@ architectures = "all"
 multi_instance = true
 ldap = "false"
 sso = "false"
-# FIXME: replace with an **estimate** minimum disk and RAM requirements. e.g. 20M, 400M, 1G...
-disk = "50M"
+disk = "100M"
 ram.build = "50M"
 ram.runtime = "50M"
 
