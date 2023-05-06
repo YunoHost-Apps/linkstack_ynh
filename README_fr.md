@@ -29,7 +29,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 * Site officiel de l’app : <https://linkstack.org/>
 * Documentation officielle de l’admin : <https://docs.linkstack.org/>
-* Dépôt de code officiel de l’app : <https://some.forge.com/example/example>
+* Dépôt de code officiel de l’app : <https://github.com/LinkStackOrg/LinkStack>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_linkstack>
 * Signaler un bug : <https://github.com/YunoHost-Apps/linkstack_ynh/issues>
 
