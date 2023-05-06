@@ -30,6 +30,7 @@ ynh_setup_source --dest_dir="$install_dir"
 # permission by default ... however, you may need to recursively reapply
 # ownership to all files such as after the ynh_setup_source step
 chown -R $app:www-data "$install_dir"
+chmod o-rwx "$install_dir" -R
 
 #=================================================
 # SYSTEM CONFIGURATION
@@ -37,7 +38,7 @@ chown -R $app:www-data "$install_dir"
 ynh_script_progression --message="Adding system configurations related to $app..." --weight=1
 
 # Create a dedicated PHP-FPM config using the conf/php-fpm.conf or conf/extra_php-fpm.conf
-ynh_add_fpm_config
+ynh_add_fpm_config --usage=medium --footprint=low
 
 # Create a dedicated NGINX config using the conf/nginx.conf template
 ynh_add_nginx_config
@@ -55,11 +56,11 @@ pushd $install_dir
 use App\Models\User;
 
 User::create([
-    'name' => $admin_fullname,
-    'email' => $admin_mail,
+    'name' => '$admin_fullname',
+    'email' => '$admin_mail',
     'email_verified_at' => '0001-01-01 00:00:00',
-    'password' => Hash::make($password),
-    'littlelink_name' => $admin,
+    'password' => Hash::make('$password'),
+    'littlelink_name' => '$admin',
     'littlelink_description' => 'admin page',
     'block' => 'no',
 ]);
@@ -70,6 +71,10 @@ popd
 
 # End of installation
 ynh_secure_remove $install_dir/INSTALLING
+ynh_write_var_in_file --file="$install_dir/.env" --key="APP_DEBUG" --value="false"
+ynh_write_var_in_file --file="$install_dir/.env" --key="APP_ENV" --value="production"
+ynh_write_var_in_file --file="$install_dir/.env" --key="NOTIFY_UPDATES" --value="false"
+ynh_write_var_in_file --file="$install_dir/.env" --key="NOTIFY_EVENTS" --value="false"
 
 #=================================================
 # END OF SCRIPT

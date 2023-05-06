@@ -28,16 +28,27 @@ upgrade_type=$(ynh_check_app_version_changed)
 
 if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
+	# Enable maintenance mode while upgrading
+	ynh_write_var_in_file --file="$install_dir/.env" --key="MAINTENANCE_MODE" --value="true"
+
 	ynh_script_progression --message="Upgrading source files..." --weight=1
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir" --keep=".env databases"
+	# Keep .env and database.sqlite !
+	ynh_setup_source --dest_dir="$install_dir" --keep=".env database/database.sqlite"
+
+	# Remove this file as the app is already installed
+	ynh_secure_remove $install_dir/INSTALLING
 fi
 
 # $install_dir will automatically be initialized with some decent 
 # permission by default ... however, you may need to recursively reapply
 # ownership to all files such as after the ynh_setup_source step
 chown -R $app:www-data "$install_dir"
+chmod o-rwx "$install_dir" -R
+
+# Disable maintenance mode
+ynh_write_var_in_file --file="$install_dir/.env" --key="MAINTENANCE_MODE" --value="false"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
@@ -46,7 +57,7 @@ ynh_script_progression --message="Upgrading system configurations related to $ap
 
 # This should be a literal copypasta of what happened in the install's "System configuration" section
 
-ynh_add_fpm_config
+ynh_add_fpm_config --usage=medium --footprint=low
 
 ynh_add_nginx_config
 

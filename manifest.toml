@@ -5,16 +5,16 @@ name = "LinkStack"
 description.en = "A highly customizable link sharing platform with an intuitive, easy to use user interface."
 description.fr = "Une plateforme de partage de lien hautement personnalisable, avvec une interface simple à utiliser."
 
-version = "3.6~ynh1"
+version = "3.6.0~ynh1"
 
 maintainers = ["Tagada"]
 
 [upstream]
-license = "agpl-3-or-later"
+license = "AGPL-3.0-or-later"
 website = "https://linkstack.org/"
 admindoc = "https://docs.linkstack.org/"
-code = "https://some.forge.com/example/example"
-# FIXME: No CPE yet... check https://nvd.nist.gov/products/cpe/search/results?namingFormat=2.3&keyword=LinkStack
+code = "https://github.com/LinkStackOrg/LinkStack"
+# XXX: No CPE yet... check https://nvd.nist.gov/products/cpe/search/results?namingFormat=2.3&keyword=LinkStack
 #cpe = "???"
 fund = "https://liberapay.com/LittleLink-Custom"
 
@@ -22,10 +22,9 @@ fund = "https://liberapay.com/LittleLink-Custom"
 yunohost = ">= 11.1.14"
 architectures = "all"
 multi_instance = true
-ldap = "false"
-sso = "false"
-# FIXME: replace with an **estimate** minimum disk and RAM requirements. e.g. 20M, 400M, 1G...
-disk = "50M"
+ldap = false
+sso = false
+disk = "100M"
 ram.build = "50M"
 ram.runtime = "50M"
 
@@ -69,7 +68,10 @@ ram.runtime = "50M"
         # See the 'sources' resource documentation for more details
 
         autoupdate.strategy = "latest_github_release"
-        autoupdate.asset = ".*linkstack\.zip"
+        autoupdate.asset = "linkstack.zip"
+
+    [resources.system_user]
+    # This will provision/deprovision a unix system user
 
     [resources.install_dir]
     # This will create/remove the install dir as /var/www/$app
