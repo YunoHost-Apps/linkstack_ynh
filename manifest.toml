@@ -69,7 +69,7 @@ ram.runtime = "50M"
         # See the 'sources' resource documentation for more details
 
         autoupdate.strategy = "latest_github_release"
-        autoupdate.asset = ".*linkstack\.zip"
+        autoupdate.asset = "linkstack.zip"
 
     [resources.install_dir]
     # This will create/remove the install dir as /var/www/$app
