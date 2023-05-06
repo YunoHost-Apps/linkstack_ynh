@@ -33,7 +33,7 @@ Additionally, LinkStack allows other users to register and create their own link
 
 * Official app website: <https://linkstack.org/>
 * Official admin documentation: <https://docs.linkstack.org/>
-* Upstream app code repository: <https://some.forge.com/example/example>
+* Upstream app code repository: <https://github.com/LinkStackOrg/LinkStack>
 * YunoHost documentation for this app: <https://yunohost.org/app_linkstack>
 * Report a bug: <https://github.com/YunoHost-Apps/linkstack_ynh/issues>
 
