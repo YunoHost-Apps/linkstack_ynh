@@ -10,7 +10,7 @@ version = "3.6.0~ynh1"
 maintainers = ["Tagada"]
 
 [upstream]
-license = "agpl-3-or-later"
+license = "AGPL-3.0-or-later"
 website = "https://linkstack.org/"
 admindoc = "https://docs.linkstack.org/"
 code = "https://github.com/LinkStackOrg/LinkStack"
@@ -22,8 +22,8 @@ fund = "https://liberapay.com/LittleLink-Custom"
 yunohost = ">= 11.1.14"
 architectures = "all"
 multi_instance = true
-ldap = "false"
-sso = "false"
+ldap = false
+sso = false
 disk = "100M"
 ram.build = "50M"
 ram.runtime = "50M"
