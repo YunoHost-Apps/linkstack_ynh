@@ -45,6 +45,7 @@ fi
 # permission by default ... however, you may need to recursively reapply
 # ownership to all files such as after the ynh_setup_source step
 chown -R $app:www-data "$install_dir"
+chmod o-rwx "$install_dir" -R
 
 # Disable maintenance mode
 ynh_write_var_in_file --file="$install_dir/.env" --key="MAINTENANCE_MODE" --value="false"

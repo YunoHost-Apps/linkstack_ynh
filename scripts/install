@@ -30,6 +30,7 @@ ynh_setup_source --dest_dir="$install_dir"
 # permission by default ... however, you may need to recursively reapply
 # ownership to all files such as after the ynh_setup_source step
 chown -R $app:www-data "$install_dir"
+chmod o-rwx "$install_dir" -R
 
 #=================================================
 # SYSTEM CONFIGURATION
