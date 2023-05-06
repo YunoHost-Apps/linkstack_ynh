@@ -73,7 +73,8 @@ popd
 ynh_secure_remove $install_dir/INSTALLING
 ynh_write_var_in_file --file="$install_dir/.env" --key="APP_DEBUG" --value="false"
 ynh_write_var_in_file --file="$install_dir/.env" --key="APP_ENV" --value="production"
-ynh_write_var_in_file --file="$install_dir/.env" --key="NOTIFY_UPDATES" --value="true"
+ynh_write_var_in_file --file="$install_dir/.env" --key="NOTIFY_UPDATES" --value="false"
+ynh_write_var_in_file --file="$install_dir/.env" --key="NOTIFY_EVENTS" --value="false"
 
 #=================================================
 # END OF SCRIPT
