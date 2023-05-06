@@ -31,8 +31,8 @@ then
 	ynh_script_progression --message="Upgrading source files..." --weight=1
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	# Keep the .env and the database folder
-	ynh_setup_source --dest_dir="$install_dir" --keep=".env database"
+	# Keep .env and database.sqlite !
+	ynh_setup_source --dest_dir="$install_dir" --keep=".env database/database.sqlite"
 fi
 
 # $install_dir will automatically be initialized with some decent 
