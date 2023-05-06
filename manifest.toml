@@ -22,9 +22,7 @@ fund = "https://liberapay.com/LittleLink-Custom"
 yunohost = ">= 11.1.14"
 architectures = "all"
 multi_instance = true
-# FIXME: replace with true, false, or "not_relevant". Not to confuse with the "sso" key: the "ldap" key corresponds to wether or not a user *can* login on the app using its YunoHost credentials.
 ldap = "false"
-# FIXME: replace with true, false, or "not_relevant". Not to confuse with the "ldap" key: the "sso" key corresponds to wether or not a user is *automatically logged-in* on the app when logged-in on the YunoHost portal.
 sso = "false"
 # FIXME: replace with an **estimate** minimum disk and RAM requirements. e.g. 20M, 400M, 1G...
 disk = "50M"
@@ -35,24 +33,13 @@ ram.runtime = "50M"
     [install.domain]
     # this is a generic question - ask strings are automatically handled by YunoHost's core
     type = "domain"
-
-    [install.path]
-    # this is a generic question - ask strings are automatically handled by YunoHost's core
-    type = "path"
-    default = "/"
+    full_domain = true
 
     [install.init_main_permission]
     # this is a generic question - ask strings are automatically handled by YunoHost's core
     # This won't be saved as setting and will instead be used to initialize the SSOwat permission
     type = "group"
     default = "visitors"
-
-    [install.language]
-    ask.en = "Choose the application language"
-    ask.fr = "Choisissez la langue de l'application"
-    type = "string"
-    choices = ["fr", "en"]
-    default = "fr"
 
     [install.admin]
     # this is a generic question - ask strings are automatically handled by YunoHost's core
@@ -61,8 +48,6 @@ ram.runtime = "50M"
     [install.password]
     # this is a generic question - ask strings are automatically handled by YunoHost's core
     # Note that user-provided passwords questions are not automatically saved as setting
-    help.en = "Use the help field to add an information for the admin about this question."
-    help.fr = "Utilisez le champ aide pour ajouter une information à l'intention de l'administrateur à propos de cette question."
     type = "password"
 
 [resources]

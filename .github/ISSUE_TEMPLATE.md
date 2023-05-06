@@ -32,9 +32,7 @@ about: When creating a bug report, please use the following template to provide 
 - *If you performed a command from the CLI, the command itself is enough. For example:*
     ```sh
     sudo yunohost app install the_app
-    ```
-- *If you used the webadmin, please perform the equivalent command from the CLI first.*
-- *If the error occurs in your browser, explain what you did:*
+    ```xplain what you did:*
    1. *Go to '...'*
    2. *Click on '...'*
    3. *Scroll down to '...'*
@@ -42,6 +40,8 @@ about: When creating a bug report, please use the following template to provide 
 
 ### Expected behavior
 
+- *If you used the webadmin, please perform the equivalent command from the CLI first.*
+- *If the error occurs in your browser, e
 *A clear and concise description of what you expected to happen. You can remove this section if the command above is enough to understand your intent.*
 
 ### Logs
