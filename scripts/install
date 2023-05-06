@@ -55,11 +55,11 @@ pushd $install_dir
 use App\Models\User;
 
 User::create([
-    'name' => $admin_fullname,
-    'email' => $admin_mail,
+    'name' => '$admin_fullname',
+    'email' => '$admin_mail',
     'email_verified_at' => '0001-01-01 00:00:00',
-    'password' => Hash::make($password),
-    'littlelink_name' => $admin,
+    'password' => Hash::make('$password'),
+    'littlelink_name' => '$admin',
     'littlelink_description' => 'admin page',
     'block' => 'no',
 ]);
