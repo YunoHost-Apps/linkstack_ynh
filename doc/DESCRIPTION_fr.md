@@ -1,1 +1,5 @@
+LinkStack est une plateforme unique qui offre solution éfficace pour gérer et partager des liens en ligne. Notre plateforme offre un site internet similaire à Linktree qui permet aux utilisateurices de dépasser la limitation de ne pouvoir ajouter un seul lien sur les réseaux sociaux.
 
+Avec LinkStack les utilisateurices peuvent facilement redirriger vers leurs pages personnelles et donner à leurs abonnés accès à tous les liens dont ils ont besoin avec une seule page facile d'accès. Ce qui dépare LinkStack d'autres plateforme de gestion de lien est sa fléxibilité qui permet aux utilisateurices qui permet d'avoir tous leurs liens sur leur propre serveur. Cela donne aux utilisateurs un contrôle total sur leur présence en ligne et assure que leurs liens soient facilement accessible.
+
+De plus, LinkStack permet aux autres utilisateurs d'enregistrer et de créer leurs propres liens faisant ainsi de LinkStack pour les organisations cherchant à gérer de nombreux liens. Notre panneau d'administration facile d'accès, gérer liens d'autres utilisateurs est possible.
