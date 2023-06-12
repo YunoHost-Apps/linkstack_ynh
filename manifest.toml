@@ -5,7 +5,7 @@ name = "LinkStack"
 description.en = "A highly customizable link sharing platform with an intuitive, easy to use user interface."
 description.fr = "Une plateforme de partage de lien hautement personnalisable, avvec une interface simple à utiliser."
 
-version = "4.0.4~ynh1"
+version = "4.0.4~ynh2"
 
 maintainers = ["Tagada", "wyverine"]
 
