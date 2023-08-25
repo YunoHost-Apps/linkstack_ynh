@@ -2,8 +2,8 @@ packaging_format = 2
 
 id = "linkstack"
 name = "LinkStack"
-description.en = "A highly customizable link sharing platform with an intuitive, easy to use user interface."
-description.fr = "Une plateforme de partage de lien hautement personnalisable, avvec une interface simple à utiliser."
+description.en = "Highly customizable link sharing platform with an intuitive"
+description.fr = "Plateforme de partage de lien hautement personnalisable"
 
 version = "4.2.6~ynh2"
 
@@ -19,7 +19,7 @@ code = "https://github.com/LinkStackOrg/LinkStack"
 fund = "https://liberapay.com/LittleLink-Custom"
 
 [integration]
-yunohost = ">= 11.1.14"
+yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = true
 ldap = false
@@ -32,7 +32,6 @@ ram.runtime = "50M"
     [install.domain]
     # this is a generic question - ask strings are automatically handled by YunoHost's core
     type = "domain"
-    full_domain = true
 
     [install.init_main_permission]
     # this is a generic question - ask strings are automatically handled by YunoHost's core
