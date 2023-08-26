@@ -23,7 +23,7 @@ Avec LinkStack les utilisateurices peuvent facilement redirriger vers leurs page
 De plus, LinkStack permet aux autres utilisateurs d'enregistrer et de créer leurs propres liens faisant ainsi de LinkStack pour les organisations cherchant à gérer de nombreux liens. Notre panneau d'administration facile d'accès, gérer liens d'autres utilisateurs est possible.
 
 
-**Version incluse :** 4.1.2~ynh2
+**Version incluse :** 4.2.6~ynh2
 
 ## Captures d’écran
 
