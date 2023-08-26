@@ -84,4 +84,4 @@ ram.runtime = "50M"
     [resources.apt]
     # This will automatically install/uninstall the following apt packages
     # and implicitly define the $phpversion setting as 8.0 (if phpX.Y-foobar dependencies are listed)
-    packages = "php8.1-bcmath php8.1-curl php8.1-mbstring php8.1-xml php8.1-sqlite3"
+    packages = "php8.1-bcmath php8.1-curl php8.1-imagick php8.1-mbstring php8.1-xml php8.1-sqlite3"
