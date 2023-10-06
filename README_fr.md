@@ -23,7 +23,7 @@ Avec LinkStack les utilisateurices peuvent facilement redirriger vers leurs page
 De plus, LinkStack permet aux autres utilisateurs d'enregistrer et de créer leurs propres liens faisant ainsi de LinkStack pour les organisations cherchant à gérer de nombreux liens. Notre panneau d'administration facile d'accès, gérer liens d'autres utilisateurs est possible.
 
 
-**Version incluse :** 4.2.8~ynh2
+**Version incluse :** 4.2.9~ynh1
 
 ## Captures d’écran
 
@@ -34,7 +34,6 @@ De plus, LinkStack permet aux autres utilisateurs d'enregistrer et de créer leu
 * Site officiel de l’app : <https://linkstack.org/>
 * Documentation officielle de l’admin : <https://docs.linkstack.org/>
 * Dépôt de code officiel de l’app : <https://github.com/LinkStackOrg/LinkStack>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_linkstack>
 * Signaler un bug : <https://github.com/YunoHost-Apps/linkstack_ynh/issues>
 
 ## Informations pour les développeurs
