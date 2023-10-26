@@ -23,7 +23,7 @@ With LinkStack, users can easily link to their own custom page and provide their
 Additionally, LinkStack allows other users to register and create their own links, making it an ideal solution for businesses and organizations looking to manage multiple links. With our user-friendly Admin Panel, managing and accessing other users' links is easy.
 
 
-**Shipped version:** 4.3.0~ynh1
+**Shipped version:** 4.3.1~ynh1
 
 ## Screenshots
 
@@ -34,6 +34,7 @@ Additionally, LinkStack allows other users to register and create their own link
 * Official app website: <https://linkstack.org/>
 * Official admin documentation: <https://docs.linkstack.org/>
 * Upstream app code repository: <https://github.com/LinkStackOrg/LinkStack>
+* YunoHost Store: <https://apps.yunohost.org/app/linkstack>
 * Report a bug: <https://github.com/YunoHost-Apps/linkstack_ynh/issues>
 
 ## Developer info
