@@ -34,6 +34,7 @@ De plus, LinkStack permet aux autres utilisateurs d'enregistrer et de créer leu
 * Site officiel de l’app : <https://linkstack.org/>
 * Documentation officielle de l’admin : <https://docs.linkstack.org/>
 * Dépôt de code officiel de l’app : <https://github.com/LinkStackOrg/LinkStack>
+* YunoHost Store: <https://apps.yunohost.org/app/linkstack>
 * Signaler un bug : <https://github.com/YunoHost-Apps/linkstack_ynh/issues>
 
 ## Informations pour les développeurs
