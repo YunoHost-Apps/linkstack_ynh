@@ -42,11 +42,15 @@ ram.runtime = "50M"
     [install.admin]
     # this is a generic question - ask strings are automatically handled by YunoHost's core
     type = "user"
+    help.en = "The email address of this user will be used as the admin login for Linkstack"
+    help.fr = "L'adresse e-mail associée à cet utilisateur sera utilisée comme identifiant administrateur dans Linkstack"
 
     [install.password]
     # this is a generic question - ask strings are automatically handled by YunoHost's core
     # Note that user-provided passwords questions are not automatically saved as setting
     type = "password"
+    help.en = "The password for the Linkstack admin user"
+    help.fr = "Le mot de passe pour le compte administrateur de Linkstack"
 
 [resources]
     # See the packaging documentation for the full set
