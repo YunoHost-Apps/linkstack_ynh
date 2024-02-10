@@ -16,7 +16,7 @@ admindoc = "https://docs.linkstack.org/"
 code = "https://github.com/LinkStackOrg/LinkStack"
 # XXX: No CPE yet... check https://nvd.nist.gov/products/cpe/search/results?namingFormat=2.3&keyword=LinkStack
 #cpe = "???"
-fund = "https://liberapay.com/LittleLink-Custom"
+fund = "https://liberapay.com/LinkStack"
 
 [integration]
 yunohost = ">= 11.2"
@@ -42,11 +42,15 @@ ram.runtime = "50M"
     [install.admin]
     # this is a generic question - ask strings are automatically handled by YunoHost's core
     type = "user"
+    help.en = "The email address of this user will be used as the admin login for LinkStack"
+    help.fr = "L'adresse e-mail associée à cet utilisateur sera utilisée comme identifiant administrateur dans LinkStack"
 
     [install.password]
     # this is a generic question - ask strings are automatically handled by YunoHost's core
     # Note that user-provided passwords questions are not automatically saved as setting
     type = "password"
+    help.en = "The password for the LinkStack admin user"
+    help.fr = "Le mot de passe pour le compte administrateur de LinkStack"
 
 [resources]
     # See the packaging documentation for the full set
