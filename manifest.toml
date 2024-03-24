@@ -2,7 +2,7 @@ packaging_format = 2
 
 id = "linkstack"
 name = "LinkStack"
-description.en = "Highly customizable link sharing platform with an intuitive"
+description.en = "Highly customizable link sharing platform"
 description.fr = "Plateforme de partage de lien hautement personnalisable"
 
 version = "4.7.7~ynh1"
