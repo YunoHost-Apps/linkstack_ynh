@@ -9,6 +9,7 @@ It shall NOT be edited by hand.
 
 [![Install LinkStack with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=linkstack)
 
+
 *[Read this README in other languages.](./ALL_README.md)*
 
 > *This package allows you to install LinkStack quickly and simply on a YunoHost server.*  
