@@ -9,10 +9,10 @@ It shall NOT be edited by hand.
 
 [![Install LinkStack with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=linkstack)
 
-*[Read this README is other languages.](./ALL_README.md)*
+*[Read this README in other languages.](./ALL_README.md)*
 
-> *This package allows you to install LinkStack quickly and simply on a YunoHost server.
-If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
+> *This package allows you to install LinkStack quickly and simply on a YunoHost server.*  
+> *If you don't have YunoHost, please consult [the guide](https://yunohost.org/install) to learn how to install it.*
 
 ## Overview
 
@@ -22,7 +22,8 @@ With LinkStack, users can easily link to their own custom page and provide their
 
 Additionally, LinkStack allows other users to register and create their own links, making it an ideal solution for businesses and organizations looking to manage multiple links. With our user-friendly Admin Panel, managing and accessing other users' links is easy.
 
-**Shipped version:** 4.7.7~ynh1
+
+**Shipped version:** 4.8.0~ynh1
 
 ## Screenshots
 
@@ -38,10 +39,9 @@ Additionally, LinkStack allows other users to register and create their own link
 
 ## Developer info
 
-Please send your pull request to the [testing branch](https://github.com/YunoHost-Apps/linkstack_ynh/tree/testing),
+Please send your pull request to the [`testing` branch](https://github.com/YunoHost-Apps/linkstack_ynh/tree/testing).
 
-
-To try the testing branch, please proceed like that.
+To try the `testing` branch, please proceed like that:
 
 ```bash
 sudo yunohost app install https://github.com/YunoHost-Apps/linkstack_ynh/tree/testing --debug
