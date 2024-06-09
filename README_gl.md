@@ -23,7 +23,7 @@ With LinkStack, users can easily link to their own custom page and provide their
 Additionally, LinkStack allows other users to register and create their own links, making it an ideal solution for businesses and organizations looking to manage multiple links. With our user-friendly Admin Panel, managing and accessing other users' links is easy.
 
 
-**Versión proporcionada:** 4.7.7~ynh1
+**Versión proporcionada:** 4.8.0~ynh1
 
 ## Capturas de pantalla
 

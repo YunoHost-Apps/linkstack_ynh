@@ -2,10 +2,10 @@ packaging_format = 2
 
 id = "linkstack"
 name = "LinkStack"
-description.en = "Highly customizable link sharing platform with an intuitive"
+description.en = "Highly customizable link sharing platform"
 description.fr = "Plateforme de partage de lien hautement personnalisable"
 
-version = "4.7.7~ynh1"
+version = "4.8.0~ynh1"
 
 maintainers = ["Tagada", "wyverine"]
 
@@ -62,8 +62,8 @@ ram.runtime = "50M"
         # This will pre-fetch the asset which can then be deployed during the install/upgrade scripts with :
         #    ynh_setup_source --dest_dir="$install_dir"
         # You can also define other assets than "main" and add --source_id="foobar" in the previous command
-        url = "https://github.com/LinkStackOrg/LinkStack/releases/download/v4.7.7/linkstack.zip"
-        sha256 = "9a897a294f7c4cc87bb7e58f1734612c6dbfcfb1c5a0648ad5aaca941f2ceafc"
+        url = "https://github.com/LinkStackOrg/LinkStack/releases/download/v4.8.0/linkstack.zip"
+        sha256 = "face6d1957d5ec728066ee05accaaa354ee39ab6a7fae251bfb0153fab6317e6"
 
         # These infos are used by https://github.com/YunoHost/apps/blob/master/tools/autoupdate_app_sources/autoupdate_app_sources.py
         # to auto-update the previous asset urls and sha256sum + manifest version
