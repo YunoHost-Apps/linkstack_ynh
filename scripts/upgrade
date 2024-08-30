@@ -1,22 +1,14 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
-upgrade_type=$(ynh_check_app_version_changed)
+ynh_app_setting_set_default --key=php_upload_max_filesize --value=10M
 
-#=================================================
-# STANDARD UPGRADE STEPS
 #=================================================
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
-#ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
+#ynh_script_progression "Ensuring downward compatibility..."
 
 # Nothing to do yet...
 
@@ -26,25 +18,27 @@ upgrade_type=$(ynh_check_app_version_changed)
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
-if [ "$upgrade_type" == "UPGRADE_APP" ]
+# FIXME: this is still supported but the recommendation is now to *always* re-setup the app sources wether or not the upstream sources changed
+if ynh_app_upstream_version_changed
 then
 	# Enable maintenance mode while upgrading
 	ynh_write_var_in_file --file="$install_dir/.env" --key="MAINTENANCE_MODE" --value="true"
 
-	ynh_script_progression --message="Upgrading source files..." --weight=1
+	ynh_script_progression "Upgrading source files..."
 
 	# Download, check integrity, uncompress and patch the source from app.src
 	# Keep .env and database.sqlite !
 	ynh_setup_source --dest_dir="$install_dir" --keep=".env database/database.sqlite"
 
 	# Remove this file as the app is already installed
-	ynh_secure_remove $install_dir/INSTALLING
+	ynh_safe_rm $install_dir/INSTALLING
 fi
 
-# $install_dir will automatically be initialized with some decent 
+# $install_dir will automatically be initialized with some decent
+
 # permission by default ... however, you may need to recursively reapply
 # ownership to all files such as after the ynh_setup_source step
-chown -R $app:www-data "$install_dir"
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
 chmod o-rwx "$install_dir" -R
 
 # Disable maintenance mode
@@ -53,13 +47,13 @@ ynh_write_var_in_file --file="$install_dir/.env" --key="MAINTENANCE_MODE" --valu
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
-ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=1
+ynh_script_progression "Upgrading system configurations related to $app..."
 
 # This should be a literal copypasta of what happened in the install's "System configuration" section
 
-ynh_add_fpm_config --usage=medium --footprint=low
+ynh_config_add_phpfpm
 
-ynh_add_nginx_config
+ynh_config_add_nginx
 
 #=================================================
 # RECONFIGURE THE APP (UPDATE CONF, APPLY MIGRATIONS...)
@@ -71,4 +65,4 @@ ynh_add_nginx_config
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Upgrade of $app completed" --last
+ynh_script_progression "Upgrade of $app completed"
