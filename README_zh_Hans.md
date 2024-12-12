@@ -5,7 +5,9 @@
 
 # YunoHost 上的 LinkStack
 
-[![集成程度](https://dash.yunohost.org/integration/linkstack.svg)](https://dash.yunohost.org/appci/app/linkstack) ![工作状态](https://ci-apps.yunohost.org/ci/badges/linkstack.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/linkstack.maintain.svg)
+[![集成程度](https://apps.yunohost.org/badge/integration/linkstack)](https://ci-apps.yunohost.org/ci/apps/linkstack/)
+![工作状态](https://apps.yunohost.org/badge/state/linkstack)
+![维护状态](https://apps.yunohost.org/badge/maintained/linkstack)
 
 [![使用 YunoHost 安装 LinkStack](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=linkstack)
 
@@ -23,7 +25,7 @@ With LinkStack, users can easily link to their own custom page and provide their
 Additionally, LinkStack allows other users to register and create their own links, making it an ideal solution for businesses and organizations looking to manage multiple links. With our user-friendly Admin Panel, managing and accessing other users' links is easy.
 
 
-**分发版本：** 4.8.0~ynh1
+**分发版本：** 4.8.4~ynh1
 
 ## 截图
 
