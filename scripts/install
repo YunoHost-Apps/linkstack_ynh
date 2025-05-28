@@ -1,47 +1,33 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
+
+ynh_app_setting_set --key=php_upload_max_filesize --value=10M
 
 admin_mail=$(ynh_user_get_info --username="$admin" --key=mail)
 admin_fullname=$(ynh_user_get_info --username="$admin" --key=fullname)
 
 #=================================================
-# APP "BUILD" (DEPLOYING SOURCES, VENV, COMPILING ETC)
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Setting up source files..." --weight=1
-
-### `ynh_setup_source` is used to install an app from a zip or tar.gz file,
-### downloaded from an upstream source, like a git repository.
-### `ynh_setup_source` use the file conf/app.src
+ynh_script_progression "Setting up source files..."
 
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
 
-# $install_dir will automatically be initialized with some decent 
-# permission by default ... however, you may need to recursively reapply
-# ownership to all files such as after the ynh_setup_source step
-chown -R $app:www-data "$install_dir"
 chmod o-rwx "$install_dir" -R
 
 #=================================================
 # SYSTEM CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding system configurations related to $app..." --weight=1
+ynh_script_progression "Adding system configurations related to $app..."
 
 # Create a dedicated PHP-FPM config using the conf/php-fpm.conf or conf/extra_php-fpm.conf
-ynh_add_fpm_config --usage=medium --footprint=low
+ynh_config_add_phpfpm
 
 # Create a dedicated NGINX config using the conf/nginx.conf template
-ynh_add_nginx_config
+ynh_config_add_nginx
 
 #=================================================
 # Automated installation process
@@ -52,7 +38,7 @@ ynh_add_nginx_config
 # See https://github.com/LinkStackOrg/LinkStack/blob/5dbb2b182d58b79149e02ffedcd3f63ba916b3c9/app/Http/Controllers/InstallerController.php#L68-L78
 
 pushd $install_dir
-    php8.1 artisan tinker --execute="""
+    php$php_version artisan tinker --execute="""
 use App\Models\User;
 
 User::create([
@@ -70,7 +56,7 @@ User::where('id', '1')->update(['role' => 'admin']);
 popd
 
 # End of installation
-ynh_secure_remove $install_dir/INSTALLING
+ynh_safe_rm $install_dir/INSTALLING
 ynh_write_var_in_file --file="$install_dir/.env" --key="APP_DEBUG" --value="false"
 ynh_write_var_in_file --file="$install_dir/.env" --key="APP_ENV" --value="production"
 ynh_write_var_in_file --file="$install_dir/.env" --key="NOTIFY_UPDATES" --value="false"
@@ -79,4 +65,4 @@ ynh_write_var_in_file --file="$install_dir/.env" --key="NOTIFY_EVENTS" --value="
 #=================================================
 # END OF SCRIPT
 #=================================================
-ynh_script_progression --message="Installation of $app completed" --last
+ynh_script_progression "Installation of $app completed"
