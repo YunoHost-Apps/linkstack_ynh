@@ -9,24 +9,13 @@ admin_mail=$(ynh_user_get_info --username="$admin" --key=mail)
 admin_fullname=$(ynh_user_get_info --username="$admin" --key=fullname)
 
 #=================================================
-# APP "BUILD" (DEPLOYING SOURCES, VENV, COMPILING ETC)
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Setting up source files..."
 
-### `ynh_setup_source` is used to install an app from a zip or tar.gz file,
-### downloaded from an upstream source, like a git repository.
-### `ynh_setup_source` use the file conf/app.src
-
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
 
-# $install_dir will automatically be initialized with some decent
-
-# permission by default ... however, you may need to recursively reapply
-# ownership to all files such as after the ynh_setup_source step
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
 chmod o-rwx "$install_dir" -R
 
 #=================================================
@@ -49,7 +38,7 @@ ynh_config_add_nginx
 # See https://github.com/LinkStackOrg/LinkStack/blob/5dbb2b182d58b79149e02ffedcd3f63ba916b3c9/app/Http/Controllers/InstallerController.php#L68-L78
 
 pushd $install_dir
-    php8.4 artisan tinker --execute="""
+    php$php_version artisan tinker --execute="""
 use App\Models\User;
 
 User::create([
