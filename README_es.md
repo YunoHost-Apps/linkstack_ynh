@@ -5,7 +5,9 @@ No se debe editar a mano.
 
 # LinkStack para Yunohost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/linkstack.svg)](https://dash.yunohost.org/appci/app/linkstack) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/linkstack.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/linkstack.maintain.svg)
+[![Nivel de integración](https://apps.yunohost.org/badge/integration/linkstack)](https://ci-apps.yunohost.org/ci/apps/linkstack/)
+![Estado funcional](https://apps.yunohost.org/badge/state/linkstack)
+![Estado En Mantención](https://apps.yunohost.org/badge/maintained/linkstack)
 
 [![Instalar LinkStack con Yunhost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=linkstack)
 
@@ -23,7 +25,7 @@ With LinkStack, users can easily link to their own custom page and provide their
 Additionally, LinkStack allows other users to register and create their own links, making it an ideal solution for businesses and organizations looking to manage multiple links. With our user-friendly Admin Panel, managing and accessing other users' links is easy.
 
 
-**Versión actual:** 4.8.0~ynh1
+**Versión actual:** 4.8.4~ynh1
 
 ## Capturas
 
@@ -39,7 +41,7 @@ Additionally, LinkStack allows other users to register and create their own link
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/linkstack_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/linkstack_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 
