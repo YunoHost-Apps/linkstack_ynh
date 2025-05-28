@@ -17,7 +17,6 @@ ynh_setup_source --dest_dir="$install_dir" --keep=".env database/database.sqlite
 # Remove this file as the app is already installed
 ynh_safe_rm $install_dir/INSTALLING
 
-chmod o-rwx "$install_dir" -R
 
 # Disable maintenance mode
 ynh_write_var_in_file --file="$install_dir/.env" --key="MAINTENANCE_MODE" --value="false"
