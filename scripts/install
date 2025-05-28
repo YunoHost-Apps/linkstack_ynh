@@ -38,7 +38,7 @@ ynh_config_add_nginx
 # See https://github.com/LinkStackOrg/LinkStack/blob/5dbb2b182d58b79149e02ffedcd3f63ba916b3c9/app/Http/Controllers/InstallerController.php#L68-L78
 
 pushd $install_dir
-    php$php_version artisan tinker --execute="""
+    ynh_hide_warnings php$php_version artisan tinker --execute="""
 use App\Models\User;
 
 User::create([
@@ -65,4 +65,5 @@ ynh_write_var_in_file --file="$install_dir/.env" --key="NOTIFY_EVENTS" --value="
 #=================================================
 # END OF SCRIPT
 #=================================================
+
 ynh_script_progression "Installation of $app completed"
