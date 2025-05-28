@@ -14,80 +14,57 @@ license = "AGPL-3.0-or-later"
 website = "https://linkstack.org/"
 admindoc = "https://docs.linkstack.org/"
 code = "https://github.com/LinkStackOrg/LinkStack"
-# XXX: No CPE yet... check https://nvd.nist.gov/products/cpe/search/results?namingFormat=2.3&keyword=LinkStack
-#cpe = "???"
 fund = "https://liberapay.com/LinkStack"
 
 [integration]
-yunohost = ">= 11.2.18"
+yunohost = ">= 12.0.9"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
+
 ldap = false
 sso = false
+
 disk = "100M"
 ram.build = "50M"
 ram.runtime = "50M"
 
 [install]
     [install.domain]
-    # this is a generic question - ask strings are automatically handled by YunoHost's core
     type = "domain"
 
     [install.init_main_permission]
-    # this is a generic question - ask strings are automatically handled by YunoHost's core
-    # This won't be saved as setting and will instead be used to initialize the SSOwat permission
     type = "group"
     default = "visitors"
 
     [install.admin]
-    # this is a generic question - ask strings are automatically handled by YunoHost's core
     type = "user"
     help.en = "The email address of this user will be used as the admin login for LinkStack"
     help.fr = "L'adresse e-mail associée à cet utilisateur sera utilisée comme identifiant administrateur dans LinkStack"
 
     [install.password]
-    # this is a generic question - ask strings are automatically handled by YunoHost's core
-    # Note that user-provided passwords questions are not automatically saved as setting
     type = "password"
     help.en = "The password for the LinkStack admin user"
     help.fr = "Le mot de passe pour le compte administrateur de LinkStack"
 
 [resources]
-    # See the packaging documentation for the full set
-    # of explanation regarding the behavior and properties for each of those
 
     [resources.sources]
 
         [resources.sources.main]
-        # This will pre-fetch the asset which can then be deployed during the install/upgrade scripts with :
-        #    ynh_setup_source --dest_dir="$install_dir"
-        # You can also define other assets than "main" and add --source_id="foobar" in the previous command
         url = "https://github.com/LinkStackOrg/LinkStack/releases/download/v4.8.0/linkstack.zip"
         sha256 = "face6d1957d5ec728066ee05accaaa354ee39ab6a7fae251bfb0153fab6317e6"
-
-        # These infos are used by https://github.com/YunoHost/apps/blob/master/tools/autoupdate_app_sources/autoupdate_app_sources.py
-        # to auto-update the previous asset urls and sha256sum + manifest version
-        # assuming the upstream's code repo is on github and relies on tags or releases
-        # See the 'sources' resource documentation for more details
 
         autoupdate.strategy = "latest_github_release"
         autoupdate.asset = "linkstack.zip"
 
     [resources.system_user]
-    # This will provision/deprovision a unix system user
 
     [resources.install_dir]
     group = "www-data:r-x"
-    # This will create/remove the install dir as /var/www/$app
-    # and store the corresponding setting $install_dir
 
     [resources.permissions]
-    # This will configure SSOwat permission for $domain/$path/
-    # The initial allowed group of user is configured via the init_main_permission question (public=visitors, private=all_users)
     main.url = "/"
 
     [resources.apt]
-    # This will automatically install/uninstall the following apt packages
-    # and implicitly define the $phpversion setting as 8.0 (if phpX.Y-foobar dependencies are listed)
     packages = "php8.1-bcmath php8.1-curl php8.1-imagick php8.1-mbstring php8.1-xml php8.1-sqlite3"
