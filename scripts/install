@@ -49,7 +49,7 @@ ynh_config_add_nginx
 # See https://github.com/LinkStackOrg/LinkStack/blob/5dbb2b182d58b79149e02ffedcd3f63ba916b3c9/app/Http/Controllers/InstallerController.php#L68-L78
 
 pushd $install_dir
-    php8.1 artisan tinker --execute="""
+    php8.4 artisan tinker --execute="""
 use App\Models\User;
 
 User::create([
