@@ -37,6 +37,13 @@ ram.runtime = "50M"
     type = "group"
     default = "visitors"
 
+    [install.language]
+    ask.en = "Choose the application language"
+    ask.fr = "Choisissez la langue de l'application"
+    type = "select"
+    choices = ["fr", "en"]
+    default = "fr"
+
     [install.admin]
     type = "user"
     help.en = "The email address of this user will be used as the admin login for LinkStack"
@@ -59,6 +66,7 @@ ram.runtime = "50M"
         autoupdate.asset = "linkstack.zip"
 
     [resources.system_user]
+    allow_email = true
 
     [resources.install_dir]
     group = "www-data:r-x"
