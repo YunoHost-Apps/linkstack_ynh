@@ -10,16 +10,10 @@ ynh_app_setting_set_default --key=php_upload_max_filesize --value=10M
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
-ynh_write_var_in_file --file="$install_dir/.env" --key="MAINTENANCE_MODE" --value="true"
-
-ynh_setup_source --dest_dir="$install_dir" --keep=".env database/database.sqlite"
+ynh_setup_source --dest_dir="$install_dir" --keep=".env"
 
 # Remove this file as the app is already installed
 ynh_safe_rm $install_dir/INSTALLING
-
-
-# Disable maintenance mode
-ynh_write_var_in_file --file="$install_dir/.env" --key="MAINTENANCE_MODE" --value="false"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
