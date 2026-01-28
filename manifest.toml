@@ -5,7 +5,7 @@ name = "LinkStack"
 description.en = "Highly customizable link sharing platform"
 description.fr = "Plateforme de partage de lien hautement personnalisable"
 
-version = "4.8.4~ynh2"
+version = "4.8.5~ynh1"
 
 maintainers = ["Tagada", "wyverine"]
 
@@ -17,7 +17,7 @@ code = "https://github.com/LinkStackOrg/LinkStack"
 fund = "https://liberapay.com/LinkStack"
 
 [integration]
-yunohost = ">= 12.0.9"
+yunohost = ">= 12.1.38"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -59,8 +59,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/LinkStackOrg/LinkStack/releases/download/v4.8.4/linkstack.zip"
-        sha256 = "28519378b1e893da024d4910002d5638e06bc3cc1cde334dbec48898d23240ad"
+        url = "https://github.com/LinkStackOrg/LinkStack/releases/download/v4.8.5/linkstack.zip"
+        sha256 = "132a2a00a96580d00b29e9d04f5d5f945c5a201e2636128121f589d6494cf3ea"
 
         autoupdate.strategy = "latest_github_release"
         autoupdate.asset = "linkstack.zip"
