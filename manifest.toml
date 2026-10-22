@@ -5,7 +5,7 @@ name = "LinkStack"
 description.en = "Highly customizable link sharing platform"
 description.fr = "Plateforme de partage de lien hautement personnalisable"
 
-version = "4.8.7~ynh1"
+version = "4.8.8~ynh1"
 
 maintainers = ["Tagada", "wyverine"]
 
@@ -59,8 +59,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/LinkStackOrg/LinkStack/releases/download/v4.8.7/linkstack.zip"
-        sha256 = "880b144372b0c7adf253a921c7c124de799505396c7a814ec76e6290a9d02108"
+        url = "https://github.com/LinkStackOrg/LinkStack/releases/download/v4.8.8/linkstack.zip"
+        sha256 = "c803f635ea0ebfe583ff6adbfaba08ecbd71f8e91d0b5c44d8aaec4c51e7e590"
 
         autoupdate.strategy = "latest_github_release"
         autoupdate.asset = "linkstack.zip"
